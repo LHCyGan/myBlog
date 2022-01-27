@@ -16,5 +16,5 @@ class AlbumInfoAdmin(admin.ModelAdmin):
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == 'user':
             id = request.user.id
-            kwargs['quertset'] = MyUser.objects.filter(id=id)
-        return super.formfield_for_foreignkey(db_field, request, **kwargs)
+            kwargs['queryset'] = MyUser.objects.filter(id=id)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)

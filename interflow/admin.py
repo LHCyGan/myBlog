@@ -16,4 +16,4 @@ class BoardAdmin(admin.ModelAdmin):
         if db_field.name == 'user':
             id = request.user.id
             kwargs['quertset'] = MyUser.objects.filter(id=id)
-        return super.formfield_for_foreignkey(db_field, request, **kwargs)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
